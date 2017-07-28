@@ -21,8 +21,10 @@ All config should be put in custom_migrate_module/config/install
 
 ## Export your Drupal 7 Config
 ======
+```shell
 drush migrate-upgrade --legacy-db-url=mysql://user:pass@12.34.56.78/d6db --legacy-root=http://myd7site.com --configure-only
 drush config-export --destination=/path/to/custom_migrate_module/config/install
+```
 Remove all non-migration config files, as well as any migration config files you do not need to use. If you are only migrating data from D6/D7 content types into a new D8 content type, all you need are the group, nodes and file yml files. You can ignore the field, taxonomy and revisions config.
 Remember to remove the uuid key and value from the yml files you are going to use.
 Add your custom module to the list of enforced dependencies to remove the config on uninstall. (This will be necessary when testing your config.)
