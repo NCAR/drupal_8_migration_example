@@ -1,15 +1,15 @@
 ## Install migration modules
 
-The following modules will help perform migrations using Drush.
-Migrate_plus
+The following modules will help perform migrations using Drush:
+* [migrate_plus](https://www.drupal.org/project/migrate_plus)
 Provides extensions to the core migration framework
-Migrate_tools
+* [migrate_tools](https://www.drupal.org/project/migrate_tools)
 Provides drush commands for managing and running migrations
-Migrate_upgrade
+* [migrate_upgrade](https://www.drupal.org/project/migrate_upgrade)
 Provides drush support for upgrading from Drupal 7 or 6 to Drupal 8
 This is optional and used to export your Drupal 7 config that can be imported into Drupal 8. If you are updating field names, changing/manipulating data between sites or only migrating data these config files will need heavy modifications/updates.
 The most helpful feature of this module is creating your migration_group yml file.
-Migrate_devel
+* [migrate_devel](https://www.drupal.org/project/migrate_devel)
 Provides debug information about fields during migration imports
 This is an incredibly helpful module for devs creating migrations
 Tells devs what fields are being mapped from and where they are mapping to, as well as the field’s data structure. It’s also a great way to see programmatically if your field is mapping at all or if it is skipping the field all together.
