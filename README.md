@@ -90,7 +90,7 @@ field_article_summary:
 ```
 ## Migration resources
 
-* [Migrate API overview] (https://www.drupal.org/docs/8/api/migrate-api/migrate-api-overview)
-* [Migration plugins] (https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/migrate-process-overview)
-* [Basic migration structure and concepts] (https://evolvingweb.ca/blog/drupal-8-migration-migrating-basic-data-part-1)
-* [Migrating files] (https://deninet.com/blog/1619/building-custom-migration-drupal-8-part-4-files-and-content)
+* [Migrate API overview](https://www.drupal.org/docs/8/api/migrate-api/migrate-api-overview)
+* [Migration plugins](https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/migrate-process-overview)
+* [Basic migration structure and concepts](https://evolvingweb.ca/blog/drupal-8-migration-migrating-basic-data-part-1)
+* [Migrating files](https://deninet.com/blog/1619/building-custom-migration-drupal-8-part-4-files-and-content)
