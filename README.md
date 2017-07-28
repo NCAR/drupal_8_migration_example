@@ -1,5 +1,4 @@
 ## Install migration modules
-===
 
 The following modules will help perform migrations using Drush.
 Migrate_plus
@@ -16,13 +15,11 @@ This is an incredibly helpful module for devs creating migrations
 Tells devs what fields are being mapped from and where they are mapping to, as well as the field’s data structure. It’s also a great way to see programmatically if your field is mapping at all or if it is skipping the field all together.
 
 ## Create custom migration module
-===
 
 First, you will need to create a custom module that will hold your custom migration configuration that will be used to map the fields from your D6/D7 site to your D8 site. There are a couple of options here. You can either export and modify your D6/D7 config using migrate_upgrade or you can write the config files from scratch.
 All config should be put in custom_migrate_module/config/install
 
 ## Export your Drupal 7 Config
-===
 
 Run the following shell script to export your D6/D7 config:
 
@@ -43,7 +40,6 @@ dependencies:
 ```
 
 ## Modify the exported Drupal 7 config
-===
 
 This is the most labor intensive part of the migration process. If you are mapping the content to new fields you will need to have a deep understanding of the migration plugin system.
 When simply importing the data from one field to another with the same structure, you can use field_used_in_drupal8: field_from_drupal7
