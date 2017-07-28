@@ -1,0 +1,27 @@
+id: migrate_drupal_7
+label: 'Import from UCAR Drupal 7'
+description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
+
+dependencies:
+  enforced:
+    module:
+      - migrate_news
+
+source_type: 'Drupal 7'
+
+shared_configuration:
+  source:
+    key: drupal_7
+    database:
+      driver: mysql
+      username:
+      password:
+      host:
+      port:
+      database:
+      prefix: null
+
+dependencies:
+  enforced:
+    module:
+      - migrate_example
