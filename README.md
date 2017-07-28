@@ -29,7 +29,9 @@ drush config-export --destination=/path/to/custom_migrate_module/config/install
 ```
 
 Remove all non-migration config files, as well as any migration config files you do not need to use. If you are only migrating data from D6/D7 content types into a new D8 content type, all you need are the group, nodes and file yml files. You can ignore the field, taxonomy and revisions config.
+
 Remember to remove the uuid key and value from the yml files you are going to use.
+
 Add your custom module to the list of enforced dependencies to remove the config on uninstall. (This will be necessary when testing your config.)
 
 ```yml
@@ -42,14 +44,16 @@ dependencies:
 ## Modify the exported Drupal 7 config
 
 This is the most labor intensive part of the migration process. If you are mapping the content to new fields you will need to have a deep understanding of the migration plugin system.
-When simply importing the data from one field to another with the same structure, you can use field_used_in_drupal8: field_from_drupal7
+When simply importing the data from one field to another with the same structure, you can use `field_used_in_drupal8: field_from_drupal7`
+
 A few plugins to be aware of are:
-default_value
-static_map
-format_date
-extract
-Iterator
-migration_lookup
+* default_value
+* static_map
+* format_date
+* extract
+* iterator
+* migration_lookup
+
 When migrating files, the basic structure you will need to use is:
 
 ```yml
@@ -67,7 +71,8 @@ field_used_in_drupal8:
      width: width
 ```
 
-Migrating taxonomies can be done using the static_map plugin
+Migrating taxonomies can be done using the static_map plugin.
+
 You can perform several actions using multiple plugins on a single field by using the following format:
 
 ```yml
