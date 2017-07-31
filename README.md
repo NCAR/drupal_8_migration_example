@@ -82,10 +82,10 @@ Migrating taxonomies can be done using the static_map plugin:
       plugin: static_map
       source: field_from_drupal7
       map:
-        d7ID: d8ID
-        d7ID: d8ID
-        d7ID: d8ID
-        d7ID: d8ID
+        d7ID1: d8ID1
+        d7ID2: d8ID2
+        d7ID3: d8ID3
+        d7ID4: d8ID4
       bypass: true
 ```
 
