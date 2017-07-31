@@ -20,8 +20,3 @@ shared_configuration:
       port:
       database:
       prefix: null
-
-dependencies:
-  enforced:
-    module:
-      - migrate_example
