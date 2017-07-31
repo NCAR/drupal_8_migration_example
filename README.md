@@ -4,7 +4,7 @@
 
 The following modules will help perform migrations using Drush:
 * [migrate_plus](https://www.drupal.org/project/migrate_plus)
-  * Provides extensions to the core migration framework
+  * Provides extensions to the core migration framework. The code also provides good plugin examples to look at.
 * [migrate_tools](https://www.drupal.org/project/migrate_tools)
   * Provides drush commands for managing and running migrations
 * [migrate_upgrade](https://www.drupal.org/project/migrate_upgrade)
@@ -48,13 +48,19 @@ dependencies:
 This is the most labor intensive part of the migration process. If you are mapping the content to new fields you will need to have a deep understanding of the migration plugin system.
 When simply importing the data from one field to another with the same structure, you can use `field_used_in_drupal8: field_from_drupal7`
 
+Hopefully, all you will need to do is a single one-to-one mapping for your fields.
+
+```yml
+field_used_in_drupal8: field_from_drupal7
+```
+
 A few plugins to be aware of are:
-* default_value
-* static_map
-* format_date
-* extract
-* iterator
-* migration_lookup
+* [default_value](https://www.drupal.org/docs/8/api/migrate-api/migrate-process/process-plugin-default_value)
+* [static_map](https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/process-plugin-static-map)
+* [format_date](https://api.drupal.org/api/drupal/core%21modules%21migrate%21src%21Plugin%21migrate%21process%21FormatDate.php/class/FormatDate/8.3.x)
+* [extract](https://www.drupal.org/docs/8/api/migrate-api/migrate-process/process-plugin-extract)
+* [iterator](https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/process-plugin-iterator)
+* [migration_lookup](https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/process-plugin-migration_lookup-formerly-migration)
 
 When migrating files, the basic structure you will need to use is:
 
