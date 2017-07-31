@@ -1,7 +1,6 @@
 # Migrating from D6/D7 to D8
 
 ## Install migration modules
-
 The following modules will help perform migrations using Drush:
 * [migrate_plus](https://www.drupal.org/project/migrate_plus)
   * Provides extensions to the core migration framework. The code also provides good plugin examples to look at.
@@ -17,12 +16,10 @@ The following modules will help perform migrations using Drush:
   * Tells devs what fields are being mapped from and where they are mapping to, as well as the field’s data structure. It’s also a great way to see programmatically if your field is mapping at all or if it is skipping the field all together.
 
 ## Create custom migration module
-
 First, you will need to create a custom module that will hold your custom migration configuration that will be used to map the fields from your D6/D7 site to your D8 site. There are a couple of options here. You can either export and modify your D6/D7 config using migrate_upgrade or you can write the config files from scratch.
 All config should be put in custom_migrate_module/config/install
 
 ## Export your Drupal 7 Config
-
 Run the following shell script to export your D6/D7 config:
 
 ```shell
@@ -44,7 +41,6 @@ dependencies:
 ```
 
 ## Modify the exported Drupal 7 config
-
 This is the most labor intensive part of the migration process. If you are mapping the content to new fields you will need to have a deep understanding of the migration plugin system.
 When simply importing the data from one field to another with the same structure, you can use `field_used_in_drupal8: field_from_drupal7`
 
@@ -79,7 +75,19 @@ field_used_in_drupal8:
      width: width
 ```
 
-Migrating taxonomies can be done using the static_map plugin.
+Migrating taxonomies can be done using the static_map plugin:
+
+```yml
+  field_used_in_drupal8:
+      plugin: static_map
+      source: field_from_drupal7
+      map:
+        d7ID: d8ID
+        d7ID: d8ID
+        d7ID: d8ID
+        d7ID: d8ID
+      bypass: true
+```
 
 You can perform several actions using multiple plugins on a single field by using the following format:
 
@@ -97,7 +105,6 @@ field_article_summary:
    callable: strip_tags
 ```
 ## Migration resources
-
 * [Migrate API overview](https://www.drupal.org/docs/8/api/migrate-api/migrate-api-overview)
 * [Migration plugins](https://www.drupal.org/docs/8/api/migrate-api/migrate-process-plugins/migrate-process-overview)
 * [Basic migration structure and concepts](https://evolvingweb.ca/blog/drupal-8-migration-migrating-basic-data-part-1)
